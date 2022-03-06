@@ -8,7 +8,7 @@ export const SingleProductPage1 = ({brand,pname,rating}) => {
   return (
     <>
      <h1>{brand}</h1>
-      <p>{pname}</p>
+      <p style = {{fontSize: "16px", color : "gray"}}>{pname}</p>
       <div>
         <Box
           sx={{

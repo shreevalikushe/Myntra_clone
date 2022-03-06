@@ -7,12 +7,13 @@ import Input from '@mui/material/Input';
 import Alert from '@mui/material/Alert';
 
 export const SingleProductPage3 = () => {
+
+  const[alert, setAlert] = useState(true);
   const [pin, setPin] = useState();
   const pinCheck = () =>{
     if(pin.length < 6 ){
-        // console.log(pin.length, typeof(pin))
-    //  <Alert severity="error">Please enter a valid code</Alert>
-      alert("Please enter a valid code");
+       setAlert(false);
+      // alert("Please enter a valid code");
     }
   }
 
@@ -35,7 +36,10 @@ export const SingleProductPage3 = () => {
         width = '300px'
       >
         <Input type = "text" placeholder="Enter a PIN Code" onChange={(e) => setPin(e.currentTarget.value)} />
-        <Button onClick={() => pinCheck()}>Check</Button>
+        {alert ? ( <Button onClick={() => pinCheck()}>Check</Button>):
+           ( <Button onClick={() => pinCheck()}>Change</Button>)
+        }
+       
       </Box>
       <br />
    
